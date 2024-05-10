@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import "./style.css";
 import Flags from './Flag';
 
 const apiurl = 'https://restcountries.com/v3.1/all';
@@ -21,6 +22,7 @@ function CountryFlag() {
 
   return (
     <>
+    <div className="main">
       {countries.map((country) => (
         <Flags
           key={country.name.common}
@@ -29,6 +31,7 @@ function CountryFlag() {
           flagName={country.name.common}
         />
       ))}
+      </div>
     </>
   );
 }
